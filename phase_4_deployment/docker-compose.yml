@@ -1,0 +1,127 @@
+version: '3.8'
+
+services:
+  q5_trading_bot:
+    build:
+      context: ..
+      dockerfile: phase_4_deployment/docker_deploy/Dockerfile
+    container_name: q5_trading_bot
+    restart: unless-stopped
+    volumes:
+      - ../keys:/app/keys:ro
+      - ../output:/app/output
+      - ../logs:/app/logs
+      - ../config.yaml:/app/config.yaml
+    ports:
+      - "8080:8080"  # Health check server
+    environment:
+      # API Keys
+      - HELIUS_API_KEY=${HELIUS_API_KEY}
+      - BIRDEYE_API_KEY=${BIRDEYE_API_KEY}
+      - COINGECKO_API_KEY=${COINGECKO_API_KEY}
+      - LILJITO_QUICKNODE_API_KEY=${LILJITO_QUICKNODE_API_KEY}
+      - WALLET_ADDRESS=${WALLET_ADDRESS}
+
+      # RPC URLs
+      - HELIUS_RPC_URL=https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}
+      - FALLBACK_RPC_URL=https://api.mainnet-beta.solana.com
+      - LILJITO_QUICKNODE_RPC_URL=https://lil-jito.quiknode.pro/${LILJITO_QUICKNODE_API_KEY}
+
+      # Trading Configuration
+      - DRY_RUN=${DRY_RUN:-true}
+      - TRADING_ENABLED=${TRADING_ENABLED:-true}
+      - PAPER_TRADING=${PAPER_TRADING:-false}
+
+      # Notification Settings
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+
+      # System Settings
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - RUST_BACKTRACE=1
+      - PYTHONUNBUFFERED=1
+      - RUST_LOG=info
+
+      # PyO3 Extension Settings
+      - SOLANA_TX_UTILS_FALLBACK=true
+      - DOCKER_CONTAINER=true
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+    networks:
+      - q5network
+
+    # Health check to ensure the PyO3 extension is loaded
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0 if __import__('importlib').util.find_spec('solana_tx_utils') else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+    # Command to run
+    command: ["python", "phase_4_deployment/unified_runner.py", "--mode", "${TRADING_MODE:-paper}"]
+
+  streamlit_dashboard:
+    build:
+      context: ..
+      dockerfile: phase_4_deployment/docker_deploy/Dockerfile
+    container_name: q5_streamlit_dashboard
+    restart: unless-stopped
+    volumes:
+      - ../output:/app/output
+      - ../logs:/app/logs
+      - ../config.yaml:/app/config.yaml
+    ports:
+      - "8501:8501"  # Streamlit dashboard
+    environment:
+      # System Settings
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=false
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+      - STREAMLIT_THEME_BASE=dark
+      - STREAMLIT_THEME_PRIMARY_COLOR=#FF4B4B
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.2'
+          memory: 256M
+
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "10"
+
+    networks:
+      - q5network
+
+    # Command to run
+    command: ["streamlit", "run", "phase_4_deployment/monitoring/streamlit_dashboard.py", "--server.port", "8501", "--server.headless", "false"]
+
+networks:
+  q5network:
+    driver: bridge

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Integration Test Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .test-results {
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .pass {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .fail {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Docker Integration Test Report</h1>
+        <p>Generated on Fri May 16 20:24:34 PDT 2025</p>
+        
+        <div class="summary">
+            <h2>Test Summary</h2>
+            <p>
+                <strong>Passed:</strong> 0<br>
+                <strong>Failed:</strong> 4<br>
+                <strong>Total:</strong> 4
+            </p>
+        </div>
+        
+        <div class="test-results">
+            <h2>Test Results</h2>
+            <table>
+                <tr>
+                    <th>Test</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>Docker Build Tests</td>
+                    <td class="fail">
+                        FAILED
+                    </td>
+                </tr>
+                <tr>
+                    <td>Docker Runtime Tests</td>
+                    <td class="fail">
+                        FAILED
+                    </td>
+                </tr>
+                <tr>
+                    <td>PyO3 Functionality Tests</td>
+                    <td class="fail">
+                        FAILED
+                    </td>
+                </tr>
+                <tr>
+                    <td>Integration Tests</td>
+                    <td class="fail">
+                        FAILED
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="test-details">
+            <h2>Test Details</h2>
+            
+            <h3>Docker Build Tests</h3>
+            <div class="details">
+Docker Build Test Results - Fri May 16 20:15:34 PDT 2025
+=================================
+❌ Development image build: FAILED
+❌ Production image build: FAILED
+❌ Image size check: FAILED (Image is too large)
+❌ PyO3 extension check: FAILED
+❌ Multi-stage build check: FAILED (Build tools found in final image)
+
+Test Summary:
+  Passed: 0
+  Failed: 5
+  Total: 5
+            </div>
+            
+            <h3>Docker Runtime Tests</h3>
+            <div class="details">
+Docker Runtime Test Results - Fri May 16 20:23:33 PDT 2025
+==================================
+❌ Production container start: FAILED
+✅ Container running check: PASSED
+✅ Container logs check: PASSED
+❌ PyO3 extension loaded check: FAILED
+❌ Health check working: FAILED
+❌ Fallback mechanism check: FAILED
+✅ Resource limits check: PASSED
+❌ Development container start: FAILED
+❌ Development tools check: FAILED
+
+Test Summary:
+  Passed: 3
+  Failed: 6
+  Total: 9
+            </div>
+            
+            <h3>PyO3 Functionality Tests</h3>
+            <div class="details">
+PyO3 Functionality Test Results - Fri May 16 20:24:03 PDT 2025
+=====================================
+❌ Production container start: FAILED
+❌ PyO3 functionality tests: FAILED
+
+Test Summary:
+  Passed: 0
+  Failed: 2
+  Total: 2
+            </div>
+            
+            <h3>Integration Tests</h3>
+            <div class="details">
+Integration Test Results - Fri May 16 20:24:16 PDT 2025
+============================
+❌ Production container start: FAILED
+❌ Integration tests: FAILED
+
+Test Summary:
+  Passed: 0
+  Failed: 2
+  Total: 2
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-05-31T12:32:12.919470",
+  "signal": {
+    "action": "BUY",
+    "market": "SOL-USDC",
+    "price": 157.847961,
+    "size": 0.45612379399999997,
+    "confidence": 0.8,
+    "timestamp": "2025-05-31T12:30:15.136950",
+    "source": "opportunistic_volatility_breakout",
+    "position_info": {
+      "position_size_sol": 0.45612379399999997,
+      "position_size_usd": 82.10228292,
+      "position_size_pct": 1.1111111111111112,
+      "position_size_pct_of_active": 1.1111111111111112,
+      "position_size_pct_of_total": 1.0,
+      "risk_amount_sol": 0.0456123794,
+      "risk_amount_usd": 8.210228292,
+      "signal_strength": 0.8,
+      "strategy": "opportunistic_volatility_breakout",
+      "market_regime": "ranging",
+      "volatility": 0.03,
+      "multipliers": {
+        "signal": 0.9,
+        "strategy": 1.0,
+        "regime": 1.0,
+        "volatility": 1.2
+      },
+      "rejected": false,
+      "fee_optimized": false,
+      "active_capital_sol": 0.41051141459999996,
+      "total_wallet_sol": 0.45612379399999997,
+      "timestamp": "2025-05-31T12:30:15.136797"
+    },
+    "strategy_info": {
+      "strategy_name": "opportunistic_volatility_breakout",
+      "allocation": 1.0,
+      "suitability": 1.0,
+      "base_size": 0.45612379399999997,
+      "allocated_size": 0.45612379399999997,
+      "final_size": 0.45612379399999997
+    },
+    "regime_info": {
+      "regime": "ranging",
+      "multiplier": 1.0,
+      "confidence": 1.0
+    },
+    "enrichment_info": {
+      "base_confidence": 0.8,
+      "strategy_adjusted_confidence": 0.8,
+      "enhanced_confidence": 0.8,
+      "priority_score": 0.8
+    }
+  },
+  "result": {
+    "success": true,
+    "signature": "x5jo5J3qSzi8t33m44hganL5vNJ4PKfuHrrix3R7yevEJZS1JDAEdhSn4msKqgEiQrt7vx9UMJhgstgb3BZqPpA",
+    "provider": "https://mainnet.helius-rpc.com/?api-key=dda9f776-9a40-447d-9ca4-22a27c21169e",
+    "verified": false,
+    "verification_method": "submission_success"
+  },
+  "execution_time": 111.18419,
+  "wallet_address": "J2FkQP683JsCsABxTCx7iGisdQZQPgFDMSvgPhGPE3bz",
+  "mode": "live",
+  "balance_validation": {
+    "balance_before": 0.458123794,
+    "balance_after": 0.458113794,
+    "balance_changed": true,
+    "balance_change": -9.99999999995449e-06
+  }
+}

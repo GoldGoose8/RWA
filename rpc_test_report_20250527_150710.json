@@ -1,0 +1,121 @@
+{
+  "timestamp": "2025-05-27T15:07:10.895654",
+  "endpoints_tested": [
+    "helius_mainnet",
+    "helius_devnet",
+    "solana_mainnet",
+    "solana_devnet",
+    "solana_testnet",
+    "quicknode_mainnet",
+    "jito_mainnet",
+    "jito_bundles",
+    "jupiter_quote",
+    "jupiter_swap"
+  ],
+  "results": {
+    "helius_mainnet_connectivity": "SUCCESS",
+    "helius_devnet_connectivity": "SUCCESS",
+    "solana_mainnet_connectivity": "SUCCESS",
+    "solana_devnet_connectivity": "SUCCESS",
+    "solana_testnet_connectivity": "SUCCESS",
+    "quicknode_mainnet_connectivity": "HTTP_401",
+    "jito_mainnet_connectivity": "HTTP_404",
+    "jupiter_quote_connectivity": "SUCCESS",
+    "helius_mainnet_health": "HEALTHY",
+    "helius_devnet_health": "HEALTHY",
+    "solana_mainnet_health": "HEALTHY",
+    "solana_devnet_health": "HEALTHY",
+    "solana_testnet_health": "HEALTHY",
+    "quicknode_mainnet_health": "UNHEALTHY: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32600, 'message': 'Must be authenticated!'}}",
+    "helius_mainnet_balance": "2.641639_SOL",
+    "helius_devnet_balance": "5.996985_SOL",
+    "solana_mainnet_balance": "2.641639_SOL",
+    "solana_devnet_balance": "5.996985_SOL",
+    "solana_testnet_balance": "0.000000_SOL",
+    "quicknode_mainnet_balance": "ERROR: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32600, 'message': 'Must be authenticated!'}}",
+    "helius_mainnet_blockhash": "SUCCESS_slot_321108007",
+    "helius_devnet_blockhash": "SUCCESS_slot_371712606",
+    "solana_mainnet_blockhash": "SUCCESS_slot_321108010",
+    "solana_devnet_blockhash": "SUCCESS_slot_371712608",
+    "solana_testnet_blockhash": "SUCCESS_slot_293001035",
+    "quicknode_mainnet_blockhash": "ERROR: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32600, 'message': 'Must be authenticated!'}}",
+    "helius_mainnet_simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.1.16', 'slot': 342892174}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+    "helius_devnet_simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.11', 'slot': 383741989}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+    "solana_mainnet_simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.14', 'slot': 342892176}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+    "solana_devnet_simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.14', 'slot': 383741991}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+    "solana_testnet_simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.14', 'slot': 336245349}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+    "quicknode_mainnet_simulation": "HTTP_401",
+    "jupiter_quote": "SUCCESS",
+    "jupiter_swap": "SUCCESS",
+    "jito_bundles": "HTTP_400",
+    "helius_mainnet_rate_limit": "5_success_0_limited",
+    "helius_devnet_rate_limit": "5_success_0_limited",
+    "solana_mainnet_rate_limit": "5_success_0_limited",
+    "solana_devnet_rate_limit": "5_success_0_limited",
+    "solana_testnet_rate_limit": "5_success_0_limited",
+    "quicknode_mainnet_rate_limit": "0_success_0_limited"
+  },
+  "summary": {
+    "helius_mainnet": {
+      "connectivity": "SUCCESS",
+      "health": "HEALTHY",
+      "balance": "2.641639_SOL",
+      "blockhash": "SUCCESS_slot_321108007",
+      "simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.1.16', 'slot': 342892174}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+      "rate_limit": "5_success_0_limited"
+    },
+    "helius_devnet": {
+      "connectivity": "SUCCESS",
+      "health": "HEALTHY",
+      "balance": "5.996985_SOL",
+      "blockhash": "SUCCESS_slot_371712606",
+      "simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.11', 'slot': 383741989}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+      "rate_limit": "5_success_0_limited"
+    },
+    "solana_mainnet": {
+      "connectivity": "SUCCESS",
+      "health": "HEALTHY",
+      "balance": "2.641639_SOL",
+      "blockhash": "SUCCESS_slot_321108010",
+      "simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.14', 'slot': 342892176}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+      "rate_limit": "5_success_0_limited"
+    },
+    "solana_devnet": {
+      "connectivity": "SUCCESS",
+      "health": "HEALTHY",
+      "balance": "5.996985_SOL",
+      "blockhash": "SUCCESS_slot_371712608",
+      "simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.14', 'slot': 383741991}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+      "rate_limit": "5_success_0_limited"
+    },
+    "solana_testnet": {
+      "connectivity": "SUCCESS",
+      "health": "HEALTHY",
+      "balance": "0.000000_SOL",
+      "blockhash": "SUCCESS_slot_293001035",
+      "simulation": "UNEXPECTED: {'jsonrpc': '2.0', 'result': {'context': {'apiVersion': '2.2.14', 'slot': 336245349}, 'value': {'accounts': None, 'err': 'BlockhashNotFound', 'innerInstructions': None, 'logs': [], 'replacementBlockhash': None, 'returnData': None, 'unitsConsumed': 0}}, 'id': 1}",
+      "rate_limit": "5_success_0_limited"
+    },
+    "quicknode_mainnet": {
+      "connectivity": "HTTP_401",
+      "health": "UNHEALTHY: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32600, 'message': 'Must be authenticated!'}}",
+      "balance": "ERROR: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32600, 'message': 'Must be authenticated!'}}",
+      "blockhash": "ERROR: {'jsonrpc': '2.0', 'id': 1, 'error': {'code': -32600, 'message': 'Must be authenticated!'}}",
+      "simulation": "HTTP_401",
+      "rate_limit": "0_success_0_limited"
+    },
+    "jito_mainnet": {
+      "connectivity": "HTTP_404"
+    },
+    "jupiter_quote": {
+      "connectivity": "SUCCESS",
+      "jupiter_quote": "SUCCESS"
+    },
+    "jupiter_swap": {
+      "jupiter_swap": "SUCCESS"
+    },
+    "jito_bundles": {
+      "jito_bundles": "HTTP_400"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-05-21T16:04:23.963803",
+  "mode": "devnet_paper_trade",
+  "components": {
+    "carbon_core": {
+      "status": "passed",
+      "timestamp": "2025-05-21T16:03:21.478645"
+    },
+    "api_clients": {
+      "status": "passed",
+      "timestamp": "2025-05-21T16:03:21.478645"
+    },
+    "transaction_builder": {
+      "status": "passed",
+      "timestamp": "2025-05-21T16:03:21.478646"
+    },
+    "wallet_sync": {
+      "status": "passed",
+      "timestamp": "2025-05-21T16:03:21.478647"
+    },
+    "monitoring": {
+      "status": "passed",
+      "timestamp": "2025-05-21T16:03:21.478647"
+    }
+  },
+  "metrics": {
+    "total_trades": 32,
+    "successful_trades": 27,
+    "failed_trades": 5,
+    "total_profit_loss": 32.55,
+    "total_profit_loss_usd": 813.75,
+    "average_execution_time": 483.1
+  },
+  "wallet": {
+    "initial_balance": {
+      "SOL": 100.0,
+      "USDC": 1000.0
+    },
+    "final_balance": {
+      "SOL": 108.15,
+      "USDC": 185.48
+    },
+    "net_change": {
+      "SOL": 8.15,
+      "USDC": -814.52,
+      "SOL_USD": 203.75,
+      "USDC_USD": -814.52,
+      "total_USD": -610.77
+    },
+    "current_prices": {
+      "SOL_USD": 25.0,
+      "USDC_USD": 1.0
+    }
+  },
+  "strategies": {
+    "momentum": {
+      "profit_loss": -1.25,
+      "profit_loss_usd": -31.25,
+      "trades": 12,
+      "win_rate": 0.42
+    },
+    "mean_reversion": {
+      "profit_loss": 9.4,
+      "profit_loss_usd": 235.0,
+      "trades": 20,
+      "win_rate": 0.75
+    }
+  }
+}

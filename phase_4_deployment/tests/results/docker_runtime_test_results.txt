@@ -1,0 +1,16 @@
+Docker Runtime Test Results - Fri May 16 20:23:33 PDT 2025
+==================================
+❌ Production container start: FAILED
+✅ Container running check: PASSED
+✅ Container logs check: PASSED
+❌ PyO3 extension loaded check: FAILED
+❌ Health check working: FAILED
+❌ Fallback mechanism check: FAILED
+✅ Resource limits check: PASSED
+❌ Development container start: FAILED
+❌ Development tools check: FAILED
+
+Test Summary:
+  Passed: 3
+  Failed: 6
+  Total: 9

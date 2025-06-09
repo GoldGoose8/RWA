@@ -1,0 +1,46 @@
+{
+  "checks": {
+    "config_files": {
+      "passed": false,
+      "message": "Configuration file not found: config.yaml",
+      "timestamp": "2025-05-19T15:23:08.119380"
+    },
+    "api_keys": {
+      "passed": true,
+      "message": "All API keys are present and valid",
+      "timestamp": "2025-05-19T15:23:09.038283"
+    },
+    "wallet_keypair": {
+      "passed": false,
+      "message": "KEYPAIR_PATH not found in environment variables",
+      "timestamp": "2025-05-19T15:23:09.039604"
+    },
+    "carbon_core": {
+      "passed": false,
+      "message": "No module named 'utils.api_helpers'",
+      "timestamp": "2025-05-19T15:23:09.040706"
+    },
+    "solana_tx_utils": {
+      "passed": false,
+      "message": "No module named 'nacl'",
+      "timestamp": "2025-05-19T15:23:09.043145"
+    },
+    "monitoring": {
+      "passed": false,
+      "message": "No module named 'utils.api_helpers'",
+      "timestamp": "2025-05-19T15:23:09.152590"
+    },
+    "docker_config": {
+      "passed": true,
+      "message": "Docker configuration is valid",
+      "timestamp": "2025-05-19T15:23:09.152645"
+    }
+  },
+  "overall": {
+    "ready": false,
+    "total_checks": 7,
+    "passed_checks": 2,
+    "failed_checks": 5,
+    "timestamp": "2025-05-19T15:23:08.119087"
+  }
+}

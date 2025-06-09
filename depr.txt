@@ -1,0 +1,274 @@
+# SYSTEM CONSOLIDATED TO 3 ENTRY POINTS
+# All redundant files have been removed
+
+# === 3 SINGLE ENTRY POINTS ===
+# 1. Live Trading: scripts/unified_live_trading.py
+# 2. Backtesting: phase_4_deployment/unified_runner.py --mode backtest
+# 3. Paper Trading: phase_4_deployment/unified_runner.py --mode paper
+
+# === DELETED REDUNDANT FILES ===
+# All files listed below have been removed from the system
+# to eliminate confusion and maintain clean architecture
+
+# core/transaction/enhanced_tx_builder.py
+# core/transaction/enhanced_tx_executor.py
+# scripts/enhanced_live_trading.py
+# scripts/test_live_orca_fix.py
+# scripts/test_orca_price_fix.py
+# scripts/test_fixed_live_trading.py
+# scripts/run_fixed_live_trading.py
+# scripts/deploy_live_production.py
+# scripts/run_48_hour_live_trading.py
+# scripts/test_live_production_deployment.py
+# scripts/test_live_trading_fixed.py
+# scripts/single_live_trade_test.py
+# phase_4_deployment/start_live_trading.py
+# phase_4_deployment/run_live_integration.py
+# phase_4_deployment/run_complete_system.py
+# phase_4_deployment/run_trading_system.py
+# phase_4_deployment/run_paper_trading.py
+
+# === DIAGNOSTIC SCRIPTS (TEMPORARY) ===
+# scripts/diagnose_signal_generation.py
+# scripts/test_api_transaction_fixes.py
+# phase_4_deployment/run_simulation.py
+# phase_4_deployment/run_active_simulation.py
+# phase_4_deployment/scripts/run_live_trade_test.py
+# phase_4_deployment/scripts/test_real_transaction.py
+# phase_4_deployment/scripts/test_trade.py
+# phase_4_deployment/scripts/run_paper_trade.py
+# phase_4_deployment/scripts/simulation_test.py
+# phase_4_deployment/scripts/run_simulation_test.py
+# phase_4_deployment/scripts/verify_simulation.py
+# scripts/test_orca_integration.py
+# scripts/test_end_to_end_system.py
+# scripts/test_100_percent_ready.py
+# scripts/test_base64_encoding_fix.py
+# scripts/test_comprehensive_alerts.py
+# scripts/test_dashboard_metrics.py
+# scripts/test_dashboard_performance.py
+# scripts/test_direct_transaction.py
+# scripts/test_dual_telegram.py
+# scripts/test_jito_signature_verification_fix.py
+# scripts/test_live_alerts_integration.py
+# scripts/test_risk_components.py
+# scripts/test_serialization_fix.py
+# scripts/test_signature_fix.py
+# scripts/test_simple_transaction.py
+# scripts/test_telegram_alerts.py
+# scripts/testnet_system_validation.py
+# scripts/enhanced_dashboard_sync.py
+# core/notifications/enhanced_telegram_wrapper.py
+# scripts/analyze_system_files.py
+# scripts/wallet_scaling_analysis.py
+# scripts/compare_strategies.py
+# scripts/deploy_fixed_jupiter_system.py
+# phase_4_deployment/deploy.py
+# phase_4_deployment/update_deployment.py
+# phase_4_deployment/setup_environment.py
+# scripts/cleanup_deprecated_files.py
+# scripts/cleanup_jupiter_files.py
+# scripts/cleanup_redundant_wallets.py
+# scripts/create_focused_depr_list.py
+# scripts/fix_jupiter_blockhash_timing.py
+# scripts/fix_signature_verification.py
+# scripts/fix_testnet_keypair.py
+# scripts/setup_jupiter_config.py
+# scripts/setup_testnet_environment.py
+# scripts/simple_testnet_test.py
+# scripts/simple_trade_test.py
+# scripts/integration_test.py
+# scripts/system_test.py
+# scripts/validate_trading_system.py
+# scripts/verify_simulation.py
+
+# === ESSENTIAL FILES KEPT ===
+# These are the only entry points and essential support files
+
+# scripts/unified_live_trading.py
+# phase_4_deployment/unified_runner.py
+# scripts/comprehensive_system_test.py
+# scripts/final_production_verification.py
+# scripts/system_status_check.py
+# scripts/rich_trade_analyzer.py
+# scripts/analyze_trades.py
+# scripts/analyze_live_metrics_profitability.py
+# phase_4_deployment/deploy_production.sh
+# phase_4_deployment/docker_deploy/entrypoint.sh
+# phase_4_deployment/dashboard/streamlit_dashboard.py
+# phase_4_deployment/monitoring/health_check_server.py
+
+# === PRODUCTION CLEANUP - 39 FILES REMOVED ===
+# Removed on production cleanup to shed weight from beautifully running system
+# All files below were outdated/irrelevant to current profitable system
+
+# tests/test_carbon_core_integration.py
+# tests/test_tx_prep_service.py
+# tests/test_signature_verification_fix.py
+# tests/test_wallet_security.py
+# tests/test_momentum_optimizer.py
+# tests/run_comprehensive_tests.py
+# tests/run_tests.sh
+# scripts/debug_transaction_execution.py
+
+# === SIMULATION AND MOCK FILES - REMOVED FOR LIVE TRADING ===
+# All simulation, placeholder, and mock components removed to ensure
+# only real trading execution occurs in the live trading system
+phase_4_deployment/scripts/simple_dry_run.py
+phase_4_deployment/unified_dashboard/simulation.py
+phase_4_deployment/python_comm_layer/mock_carbon_core.py
+phase_4_deployment/utils/mock_signal_generator.py
+scripts/generate_test_live_data.py
+phase_4_deployment/scripts/helius_dry_run.py
+# scripts/diagnose_signal_generation.py
+# scripts/fix_jupiter_signature_issue.py
+# scripts/quick_signature_test.py
+# scripts/test_signature_verification.py
+# scripts/test_simple_jupiter_fix.py
+# scripts/test_api_transaction_fixes.py
+# scripts/test_fixed_trading_system.py
+# scripts/test_live_trading_rollback.py
+# scripts/test_rollback.py
+# scripts/test_rpc_endpoints.py
+# scripts/verify_balance_change.py
+# scripts/analyze_trades.py
+# scripts/check_live_trading_status.py
+# scripts/monitor_wallet_balance.py
+# scripts/run_terminal_metrics.py
+# scripts/sync_live_dashboard_metrics.py
+# scripts/update_dashboard_for_production.py
+# scripts/update_dashboard_real_balance.py
+# scripts/auto_sync_dashboard.py
+# scripts/reset_dashboard_metrics.py
+# scripts/reset_all_metrics.py
+# scripts/create_keypair_from_env.py
+# scripts/direct_keypair_creation.py
+# scripts/generate_test_keypair.py
+# scripts/import_wallet.py
+# scripts/validate_config.py
+# scripts/test_unified_config.py
+# scripts/optimize_momentum.py
+# scripts/restart_opportunistic_with_roi.py
+# scripts/purge_mean_reversion.py
+# scripts/emergency_position_flattener.py
+
+# Conflicting Transaction Builders (Replaced by UnifiedTransactionBuilder)
+# phase_4_deployment/rpc_execution/tx_builder.py → deprecated_builders/tx_builder.py
+# core/dex/orca_swap_builder.py → deprecated_builders/orca_swap_builder.py
+# phase_4_deployment/utils/jupiter_swap_fallback.py → deprecated_builders/jupiter_swap_fallback.py
+# Cleanup date: Fri May 30 17:30:40 PDT 2025
+
+# Jupiter Integration Completely Removed
+# Replaced with native QuickNode/Jito bundle support
+# REMOVED: phase_4_deployment/utils/modern_jupiter_client.py
+# REMOVED: deprecated_builders/jupiter_swap_fallback.py
+# REMOVED: backups/pre_modern_integration/phase_4_deployment/utils/jupiter_swap_fallback.py
+# Removal date: Fri May 30 17:40:21 PDT 2025
+
+# === CRITICAL REDUNDANT FILES - JUPITER-FREE SYSTEM CONFLICTS ===
+# Files that could conflict with our new Jupiter-free production system
+# Added: May 30, 2025 - Post Jupiter-Free Implementation
+
+# LEGACY JUPITER CONFIGURATION FILES - REMOVE TO PREVENT CONFLICTS
+config/components/carbon_core.yaml                    # ❌ REMOVE: Carbon core config (not used)
+config/environments/production.yaml                   # ❌ REMOVE: Conflicts with config/live_production.yaml
+phase_4_deployment/core/unified_config.py             # ❌ REMOVE: Contains Jupiter config defaults (lines 251-257)
+phase_4_deployment/utils/config/                      # ❌ REMOVE: Duplicate config directory
+
+# DEPRECATED TRANSACTION BUILDERS - ALREADY MOVED BUT COULD BE IMPORTED
+deprecated_builders/tx_builder.py                     # ❌ REMOVE: Old transaction builder (replaced by unified)
+deprecated_builders/orca_swap_builder.py              # ❌ REMOVE: Old Orca builder (replaced by native)
+
+# LEGACY BACKUP FILES WITH JUPITER DEPENDENCIES
+backups/cleanup_backup_20250526_233411/phase_4_deployment/rpc_execution/tx_builder.py  # ❌ REMOVE: Jupiter-dependent backup
+backups/pre_modern_integration/                       # ❌ REMOVE: Entire directory (pre-Jupiter-free)
+backups/consolidation_backup/                         # ❌ REMOVE: Old consolidation backup
+
+# CONFLICTING SCRIPTS AND UTILITIES
+scripts/remove_jupiter_completely.py                  # ❌ REMOVE: Cleanup script no longer needed
+scripts/cleanup_conflicting_builders.py               # ❌ REMOVE: Cleanup script no longer needed
+scripts/production_cleanup.py                         # ❌ REMOVE: Cleanup script no longer needed
+remove_duplicates.sh                                  # ❌ REMOVE: Duplicate removal script
+backups/cleanup_backup_20250526_233411/remove_duplicates.sh  # ❌ REMOVE: Backup cleanup script
+
+# REDUNDANT DOCUMENTATION FILES
+CLEANUP_COMPLETION_SUMMARY.md                         # ❌ REMOVE: Cleanup summary (superseded by PRODUCTION_READY_MILESTONE.md)
+REDUNDANT_FILES_CLEANUP_LIST.md                       # ❌ REMOVE: Cleanup list (superseded)
+SYSTEM_CONSOLIDATION_COMPLETE.md                      # ❌ REMOVE: Old consolidation docs
+SYSTEM_REBRANDING_COMPLETE.md                         # ❌ REMOVE: Rebranding docs
+SYSTEM_UPDATES_SUMMARY.md                             # ❌ REMOVE: Old update summary
+SIGNATURE_VERIFICATION_FIX_*.md                       # ❌ REMOVE: Multiple signature fix docs (fixed)
+TESTNET_FULL_SYSTEM_TESTING.md                        # ❌ REMOVE: Testnet docs (using mainnet)
+
+# CARBON CORE COMPONENTS - NOT USED IN JUPITER-FREE SYSTEM
+carbon_core/                                          # ❌ REMOVE: Entire Rust Carbon Core (not used)
+phase_4_deployment/carbon_core/                       # ❌ REMOVE: Duplicate Carbon Core
+phase_4_deployment/core/carbon_core_*.py               # ❌ REMOVE: Carbon Core Python wrappers
+shared/rust/carbon_core/                              # ❌ REMOVE: Shared Carbon Core
+rust_comm_layer/                                      # ❌ REMOVE: Rust communication layer
+
+# SOLANA TX UTILS - REDUNDANT WITH NATIVE IMPLEMENTATION
+solana_tx_utils/                                      # ❌ REMOVE: Entire Rust tx utils (replaced by native)
+phase_4_deployment/solana_tx_utils/                   # ❌ REMOVE: Duplicate tx utils
+integration_tests/tx_utils_tests/                     # ❌ REMOVE: Tx utils tests
+
+# LEGACY PHASE DIRECTORIES - CONSOLIDATED SYSTEM
+phase_4_deployment/phase_4_deployment/               # ❌ REMOVE: Nested duplicate directory
+phase_4_deployment/quantconnect/                     # ❌ REMOVE: QuantConnect integration (not used)
+
+# REDUNDANT OUTPUT AND CACHE DIRECTORIES
+phase_4_deployment/cache/                             # ❌ REMOVE: Old cache directory
+phase_4_deployment/output/enhanced_live_trading/      # ❌ REMOVE: Old enhanced trading output
+output/enhanced_live_trading/                         # ❌ REMOVE: Duplicate enhanced trading output
+output/paper_trading/                                 # ❌ REMOVE: Paper trading output (using live only)
+output/production/                                    # ❌ REMOVE: Old production output
+
+# DOCKER AND MONITORING REDUNDANCY
+phase_4_deployment/docker_deploy/                     # ❌ REMOVE: Docker deployment (using direct Python)
+phase_4_deployment/gui_dashboard/                     # ❌ REMOVE: GUI dashboard (using Streamlit)
+monitoring/                                           # ❌ REMOVE: Root monitoring (using phase_4_deployment/monitoring)
+
+# WALLET AND KEY REDUNDANCY
+wallet/testnet_keypair.json                          # ❌ REMOVE: Testnet keypair (using mainnet)
+phase_4_deployment/test_keypair.json                 # ❌ REMOVE: Test keypair
+phase_4_deployment/keys/                              # ❌ REMOVE: Duplicate keys directory
+keys/                                                 # ❌ REMOVE: Root keys directory (using .env)
+
+# LEGACY ANALYSIS AND VISUALIZATION
+visualizations/                                       # ❌ REMOVE: Static visualizations (using live dashboard)
+reports/                                              # ❌ REMOVE: Static reports (using live metrics)
+strategy_finder.md                                   # ❌ REMOVE: Strategy finder docs
+version_updates.md                                   # ❌ REMOVE: Version update docs
+
+# SYSTEM SERVICE FILES
+synergy7.service                                      # ❌ REMOVE: Systemd service (using direct execution)
+activate_venv.sh                                      # ❌ REMOVE: Virtual env activation script
+
+# === SUMMARY OF CRITICAL CONFLICTS ===
+# Total files identified for removal: 50+ files and directories
+#
+# HIGHEST PRIORITY REMOVALS (IMMEDIATE CONFLICTS):
+# 1. phase_4_deployment/core/unified_config.py - Contains Jupiter defaults
+# 2. deprecated_builders/ - Old transaction builders
+# 3. backups/ - Jupiter-dependent backup files
+# 4. carbon_core/ - Unused Rust components
+# 5. solana_tx_utils/ - Redundant with native implementation
+#
+# MEDIUM PRIORITY (CONFIGURATION CONFLICTS):
+# 6. config/components/ - Conflicting config files
+# 7. config/environments/ - Duplicate production configs
+# 8. phase_4_deployment/utils/config/ - Duplicate config directory
+#
+# LOW PRIORITY (CLEANUP):
+# 9. Documentation files - Superseded by PRODUCTION_READY_MILESTONE.md
+# 10. Visualization/reports - Using live dashboard instead
+#
+# === JUPITER-FREE SYSTEM PROTECTION ===
+# Removing these files ensures:
+# ✅ No Jupiter API dependencies can be accidentally imported
+# ✅ No conflicting configuration files override production settings
+# ✅ No legacy transaction builders interfere with unified builder
+# ✅ Clean, maintainable codebase focused on production trading
+# ✅ Reduced system complexity and potential failure points
+#
+# Date: May 30, 2025 - Post Jupiter-Free Implementation Complete

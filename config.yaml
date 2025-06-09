@@ -1,0 +1,312 @@
+adaptive_weighting:
+  confidence_threshold: ${CONFIDENCE_THRESHOLD:-0.8}
+  drawdown_threshold: ${DRAWDOWN_THRESHOLD:--0.1}
+  enabled: ${ADAPTIVE_WEIGHTING_ENABLED:-true}
+  learning_rate: ${ADAPTIVE_LEARNING_RATE:-0.01}
+  max_strategy_weight: ${MAX_STRATEGY_WEIGHT:-0.6}
+  mean_reversion_factor: ${MEAN_REVERSION_FACTOR:-0.2}
+  min_strategy_weight: ${MIN_STRATEGY_WEIGHT:-0.1}
+  momentum_factor: ${MOMENTUM_FACTOR:-0.3}
+  performance_lookback_days: ${PERFORMANCE_LOOKBACK_DAYS:-14}
+  performance_threshold_high: ${PERFORMANCE_THRESHOLD_HIGH:-0.02}
+  performance_threshold_low: ${PERFORMANCE_THRESHOLD_LOW:--0.01}
+  performance_weight: ${PERFORMANCE_WEIGHT:-0.4}
+  regime_adjustment_factor: ${REGIME_ADJUSTMENT_FACTOR:-0.3}
+  regime_confidence_weight: ${REGIME_CONFIDENCE_WEIGHT:-0.3}
+  risk_adjustment_factor: ${RISK_ADJUSTMENT_FACTOR:-0.5}
+  risk_weight: ${RISK_WEIGHT:-0.3}
+  sharpe_threshold: ${SHARPE_THRESHOLD:-1.0}
+  weight_update_interval: ${WEIGHT_UPDATE_INTERVAL:-3600}
+apis:
+  birdeye:
+    api_key: ${BIRDEYE_API_KEY}
+    enabled: false
+    endpoint: https://public-api.birdeye.so
+    max_requests_per_minute: 100
+    max_retries: 5
+    rate_limit_delay: 0.5
+    retry_delay: 2.0
+    timeout: 10
+  coingecko:
+    api_key: ${COINGECKO_API_KEY}
+    enabled: true
+    endpoint: https://api.coingecko.com/api/v3
+  helius:
+    api_key: ${HELIUS_API_KEY}
+    enabled: true
+    endpoint: https://api.helius.dev/v0
+    rpc_endpoint: https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}
+    use_enhanced_apis: true
+    ws_endpoint: wss://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}
+backtest:
+  data_source: phase_0_env_setup/data/historical
+  end_date: '2023-12-31'
+  fee_pct: 0.001
+  initial_capital: 10000
+  output_dir: phase_2_backtest_engine/output
+  start_date: '2023-01-01'
+circuit_breaker:
+  enabled: ${CIRCUIT_BREAKER_ENABLED:-true}
+  failure_threshold: ${CIRCUIT_BREAKER_THRESHOLD:-3}
+  reset_timeout: ${CIRCUIT_BREAKER_RESET:-60}
+deployment:
+  docker:
+    container_name: q5_trading_bot
+    image: q5system:latest
+    restart_policy: unless-stopped
+  quantconnect:
+    backtest_id: your_backtest_id
+    project_id: your_project_id
+  streamlit:
+    headless: false
+    port: 8501
+dex:
+  jupiter:
+    api_url: ${JUPITER_API_URL:-https://quote-api.jup.ag/v6}
+    auto_slippage: ${JUPITER_AUTO_SLIPPAGE:-true}
+    default_slippage_bps: ${JUPITER_SLIPPAGE_BPS:-50}
+    max_accounts: ${JUPITER_MAX_ACCOUNTS:-20}
+    timeout_seconds: ${JUPITER_TIMEOUT:-5}
+execution:
+  circuit_breaker_enabled: ${CIRCUIT_BREAKER_ENABLED:-false}
+  disable_placeholders: true
+  fallback_enabled: ${FALLBACK_ENABLED:-true}
+  max_order_retries: ${MAX_ORDER_RETRIES:-10}
+  max_spread_pct: ${MAX_SPREAD_PCT:-0.10}
+  min_liquidity_usd: ${MIN_LIQUIDITY_USD:-0}
+  order_type: ${ORDER_TYPE:-market}
+  priority_fee_lamports: ${PRIORITY_FEE_LAMPORTS:-25000}
+  retry_delay: ${RETRY_DELAY:-1.0}
+  retry_failed_orders: ${RETRY_FAILED_ORDERS:-true}
+  slippage_tolerance: ${SLIPPAGE_TOLERANCE:-0.02}
+  use_jito: ${USE_JITO:-true}
+  use_real_swaps: true
+filters:
+  alpha_wallet:
+    enabled: false
+    lookback_period: 1
+    min_wallet_count: 1
+    momentum_threshold: 0.01
+  enabled: false
+  liquidity_guard:
+    enabled: false
+    min_liquidity_usd: 0
+    order_book_depth: 1
+  volatility_screener:
+    enabled: false
+    max_volatility: 1.0
+    wick_threshold: 1.0
+logging:
+  backup_count: 5
+  file_logging: true
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  level: INFO
+  log_dir: logs
+  max_file_size: 10MB
+market_regime:
+  adaptive_thresholds: ${ADAPTIVE_THRESHOLDS:-true}
+  adx_period: ${ADX_PERIOD:-14}
+  adx_threshold_base: ${ADX_THRESHOLD_BASE:-25}
+  adx_threshold_multiplier: ${ADX_THRESHOLD_MULTIPLIER:-1.2}
+  atr_period: ${ATR_PERIOD:-14}
+  bb_period: ${BB_PERIOD:-20}
+  bb_std_dev: ${BB_STD_DEV:-2}
+  choppiness_period: ${CHOPPINESS_PERIOD:-14}
+  choppiness_threshold_base: ${CHOPPINESS_THRESHOLD_BASE:-61.8}
+  choppiness_threshold_multiplier: ${CHOPPINESS_THRESHOLD_MULTIPLIER:-1.1}
+  enabled: ${MARKET_REGIME_ENABLED:-true}
+  ml_models:
+    hmm_enabled: ${HMM_ENABLED:-true}
+    hmm_lookback_days: ${HMM_LOOKBACK_DAYS:-30}
+    hmm_states: ${HMM_STATES:-4}
+    retrain_interval_hours: ${RETRAIN_INTERVAL_HOURS:-24}
+  range_period: ${RANGE_PERIOD:-20}
+  range_threshold: ${RANGE_THRESHOLD:-0.05}
+  regime_change_cooldown: ${REGIME_CHANGE_COOLDOWN:-300}
+  regime_change_lookback: ${REGIME_CHANGE_LOOKBACK:-5}
+  regime_confidence_threshold: ${REGIME_CONFIDENCE_THRESHOLD:-0.7}
+  volatility_lookback_periods:
+  - 20
+  - 50
+  - 100
+  volatility_threshold: ${VOLATILITY_THRESHOLD:-0.03}
+mode:
+  backtesting: false
+  dry_run: false
+  live_trading: true
+  paper_trading: false
+  simulation: false
+  test_mode: false
+monitoring:
+  email_alerts: false
+  enabled: true
+  log_level: INFO
+  performance_report_interval: 86400
+  telegram_alerts: true
+  update_interval: 300
+quicknode_bundles:
+  api_key: ${QUICKNODE_API_KEY}
+  api_url: ${QUICKNODE_BUNDLE_URL:-https://api.quicknode.com/v1/solana/mainnet/bundles}
+  bundle_timeout: ${QUICKNODE_BUNDLE_TIMEOUT:-30}
+  enabled: ${QUICKNODE_BUNDLES_ENABLED:-true}
+  fallback_to_jito: ${QUICKNODE_FALLBACK_JITO:-true}
+  max_bundle_size: ${QUICKNODE_MAX_BUNDLE_SIZE:-5}
+  priority_fee_lamports: ${QUICKNODE_PRIORITY_FEE:-20000}
+  retry_attempts: ${QUICKNODE_RETRY_ATTEMPTS:-3}
+quicknode_price_feeds:
+  api_key: ${QUICKNODE_API_KEY}
+  api_url: ${QUICKNODE_PRICE_API_URL:-https://api.quicknode.com/v1/solana/mainnet/prices}
+  cache_duration_seconds: ${QUICKNODE_PRICE_CACHE:-30}
+  enabled: ${QUICKNODE_PRICE_FEEDS_ENABLED:-true}
+  fallback_to_coingecko: ${QUICKNODE_PRICE_FALLBACK_COINGECKO:-true}
+  fallback_to_jupiter: ${QUICKNODE_PRICE_FALLBACK_JUPITER:-true}
+  retry_attempts: ${QUICKNODE_PRICE_RETRIES:-3}
+  timeout_seconds: ${QUICKNODE_PRICE_TIMEOUT:-10}
+quicknode_streaming:
+  api_key: ${QUICKNODE_API_KEY}
+  buffer_size: ${QUICKNODE_STREAM_BUFFER:-1000}
+  enabled: ${QUICKNODE_STREAMING_ENABLED:-true}
+  grpc_endpoint: ${QUICKNODE_GRPC_ENDPOINT:-grpc.solana.com:443}
+  heartbeat_interval: ${QUICKNODE_HEARTBEAT:-30}
+  max_reconnect_attempts: ${QUICKNODE_MAX_RECONNECTS:-10}
+  reconnect_delay: ${QUICKNODE_RECONNECT_DELAY:-5}
+  subscriptions:
+    accounts: ${QUICKNODE_STREAM_ACCOUNTS:-true}
+    blocks: ${QUICKNODE_STREAM_BLOCKS:-false}
+    slots: ${QUICKNODE_STREAM_SLOTS:-false}
+    transactions: ${QUICKNODE_STREAM_TRANSACTIONS:-true}
+  whale_detection:
+    enabled: ${QUICKNODE_WHALE_DETECTION:-true}
+    min_transaction_value_sol: ${QUICKNODE_WHALE_MIN_SOL:-100}
+    min_transaction_value_usd: ${QUICKNODE_WHALE_MIN_USD:-15000}
+    track_wallets: ${QUICKNODE_WHALE_TRACK_WALLETS:-true}
+risk:
+  circuit_breaker_enabled: false
+  daily_loss_limit_usd: 20000
+  max_drawdown_pct: 0.25
+  max_position_size_pct: 1.0
+  max_position_size_usd: 100000
+  min_profit_target_pct: 0.01
+  stop_loss_pct: 0.15
+  take_profit_pct: 0.015
+risk_management:
+  max_portfolio_exposure: 0.8
+  max_risk_per_trade: 0.02
+  position_sizer:
+    max_position_size: 0.3
+    min_position_size: 0.01
+    volatility_lookback: 20
+    volatility_scaling: true
+rl_agent:
+  collection_path: phase_4_deployment/output/rl_data
+  data_collection: true
+  enabled: false
+rpc:
+  commitment: confirmed
+  fallback_url: ${HELIUS_RPC_URL}
+  jito_url: ${JITO_RPC_URL:-https://mainnet.block-engine.jito.wtf/api/v1}
+  max_retries: 3
+  primary_url: ${QUICKNODE_RPC_URL}
+  providers:
+  - max_connections: 20
+    name: quicknode_primary
+    priority: 1
+    timeout: 15
+    url: ${QUICKNODE_RPC_URL}
+  - max_connections: 10
+    name: helius_fallback
+    priority: 2
+    timeout: 30
+    url: ${HELIUS_RPC_URL}
+  quicknode_bundle_url: ${QUICKNODE_BUNDLE_URL:-https://api.quicknode.com/v1/solana/mainnet/bundles}
+  timeout: 30
+solana:
+  commitment: confirmed
+  fallback_rpc_url: ${FALLBACK_RPC_URL}
+  max_retries: 3
+  private_rpc_url: ${HELIUS_RPC_URL}
+  provider: helius
+  retry_delay: 1.0
+  rpc_url: ${HELIUS_RPC_URL}
+  tx_timeout: 30
+strategies:
+- enabled: false
+  name: momentum_sol_usdc
+  params:
+    max_value: 0.05
+    smoothing_factor: 0.1
+    threshold: 0.005
+    use_filters: true
+    window_size: 5
+- enabled: true
+  name: opportunistic_volatility_breakout
+  params:
+    breakout_threshold: 0.015
+    min_confidence: 0.8
+    profit_target_pct: 0.01
+    risk_level: medium
+    use_filters: true
+    volatility_threshold: 0.02
+- enabled: false
+  name: wallet_momentum
+  params:
+    lookback_period: 24
+    min_wallet_count: 5
+    momentum_threshold: 0.1
+- enabled: false
+  name: alpha_signal_blend
+  params:
+    alpha_weight: 0.7
+    momentum_weight: 0.3
+strategy_attribution:
+  attribution_window_days: ${ATTRIBUTION_WINDOW_DAYS:-30}
+  benchmark_return: ${BENCHMARK_RETURN:-0.0}
+  enabled: ${STRATEGY_ATTRIBUTION_ENABLED:-true}
+  max_history_days: ${MAX_HISTORY_DAYS:-90}
+  min_trades_for_attribution: ${MIN_TRADES_ATTRIBUTION:-10}
+  performance_decay_factor: ${PERFORMANCE_DECAY_FACTOR:-0.95}
+  rebalance_threshold: ${REBALANCE_THRESHOLD:-0.1}
+  risk_free_rate: ${RISK_FREE_RATE:-0.02}
+  update_interval_minutes: ${UPDATE_INTERVAL_MINUTES:-60}
+timeouts:
+  bundle_confirmation: ${BUNDLE_CONFIRMATION_TIMEOUT:-30.0}
+  http_client: ${HTTP_CLIENT_TIMEOUT:-30.0}
+  jupiter_quote: ${JUPITER_QUOTE_TIMEOUT:-5.0}
+  transaction_confirmation: ${TX_CONFIRMATION_TIMEOUT:-30.0}
+tokens:
+  SOL: So11111111111111111111111111111111111111112
+  USDC: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+  USDT: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+trading:
+  base_position_size_pct: 0.5
+  enabled: true
+  max_position_size_pct: 0.8
+  max_trades_per_day: 24
+  max_trades_per_hour: 6
+  min_position_size_pct: 0.2
+  min_trade_interval: 300
+  min_trade_size_usd: 10        # 🚀 REDUCED: $10 minimum since strategy works
+  target_trade_size_usd: 50     # 🚀 REDUCED: $50 target for more frequent trades
+  update_interval: 10
+wallet:
+  active_trading_pct: 0.9
+  address: ${WALLET_ADDRESS}
+  data_dir: phase_0_env_setup/data
+  keypair_path: ${KEYPAIR_PATH}
+  max_positions: 10
+  min_balance_warning: 1.0
+  min_trading_balance: 0.5
+  position_update_interval: 300
+  private_key: ${WALLET_PRIVATE_KEY}
+  reserve_pct: 0.1
+  state_sync_interval: 60
+whale_watching:
+  enabled: ${WHALE_WATCHING_ENABLED:-true}
+  min_transaction_threshold_usd: ${WHALE_MIN_TRANSACTION:-100000}
+  whale_activity_lookback_hours: ${WHALE_LOOKBACK_HOURS:-24}
+  whale_confidence_weight: ${WHALE_CONFIDENCE_WEIGHT:-0.3}
+  whale_discovery_interval: ${WHALE_DISCOVERY_INTERVAL:-3600}
+  whale_signal_decay_hours: ${WHALE_SIGNAL_DECAY:-6}
+  whale_signal_filters:
+    min_transaction_volume: ${WHALE_MIN_VOLUME:-500000}
+    min_whale_count: ${WHALE_MIN_COUNT:-3}

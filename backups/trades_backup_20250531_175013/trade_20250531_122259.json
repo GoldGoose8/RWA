@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-05-31T12:22:59.658534",
+  "signal": {
+    "action": "BUY",
+    "market": "SOL-USDC",
+    "price": 157.557074,
+    "size": 0.3193076558,
+    "confidence": 0.8,
+    "timestamp": "2025-05-31T12:21:00.505771",
+    "source": "wallet_momentum",
+    "position_info": {
+      "position_size_sol": 0.456153794,
+      "position_size_usd": 82.10768292,
+      "position_size_pct": 1.1111111111111112,
+      "position_size_pct_of_active": 1.1111111111111112,
+      "position_size_pct_of_total": 1.0,
+      "risk_amount_sol": 0.0456153794,
+      "risk_amount_usd": 8.210768292000001,
+      "signal_strength": 0.8,
+      "strategy": "wallet_momentum",
+      "market_regime": "trending_down",
+      "volatility": 0.03,
+      "multipliers": {
+        "signal": 0.9,
+        "strategy": 1.0,
+        "regime": 1.0,
+        "volatility": 1.2
+      },
+      "rejected": false,
+      "fee_optimized": false,
+      "active_capital_sol": 0.4105384146,
+      "total_wallet_sol": 0.456153794,
+      "timestamp": "2025-05-31T12:21:00.505543"
+    },
+    "strategy_info": {
+      "strategy_name": "wallet_momentum",
+      "allocation": 1.0,
+      "suitability": 0.8676916116964692,
+      "base_size": 0.456153794,
+      "allocated_size": 0.456153794,
+      "final_size": 0.3193076558
+    },
+    "regime_info": {
+      "regime": "trending_down",
+      "multiplier": 0.7,
+      "confidence": 0.8632401299607692
+    },
+    "enrichment_info": {
+      "base_confidence": 0.8,
+      "strategy_adjusted_confidence": 0.6941532893571755,
+      "enhanced_confidence": 0.8,
+      "priority_score": 0.8
+    }
+  },
+  "result": {
+    "success": true,
+    "signature": "2VBGEVWHG5p16yYzR3roBFQPXcGkm41WFMBMzBTK1XSbxfgKf4KcjsijvXRob3xPTCg42vnL5JSmSAK5HTxSY3Lp",
+    "provider": "https://mainnet.helius-rpc.com/?api-key=dda9f776-9a40-447d-9ca4-22a27c21169e",
+    "verified": false,
+    "verification_method": "submission_success"
+  },
+  "execution_time": 112.320149,
+  "wallet_address": "J2FkQP683JsCsABxTCx7iGisdQZQPgFDMSvgPhGPE3bz",
+  "mode": "live",
+  "balance_validation": {
+    "balance_before": 0.458153794,
+    "balance_after": 0.458153794,
+    "balance_changed": false,
+    "balance_change": 0.0
+  }
+}

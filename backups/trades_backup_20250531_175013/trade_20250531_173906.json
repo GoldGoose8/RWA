@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-05-31T17:39:06.458037",
+  "signal": {
+    "action": "BUY",
+    "market": "SOL-USDC",
+    "price": 156.225056,
+    "size": 0.051542337,
+    "confidence": 0.8,
+    "timestamp": "2025-05-31T17:38:51.597155",
+    "source": "opportunistic_volatility_breakout",
+    "position_info": {
+      "position_size_sol": 0.051542337,
+      "position_size_usd": 9.27762066,
+      "position_size_pct": 1.111111111111111,
+      "position_size_pct_of_active": 1.111111111111111,
+      "position_size_pct_of_total": 1.0,
+      "risk_amount_sol": 0.0051542337,
+      "risk_amount_usd": 0.927762066,
+      "signal_strength": 0.8,
+      "strategy": "opportunistic_volatility_breakout",
+      "market_regime": "ranging",
+      "volatility": 0.03,
+      "multipliers": {
+        "signal": 0.9,
+        "strategy": 1.0,
+        "regime": 1.0,
+        "volatility": 1.2
+      },
+      "rejected": false,
+      "fee_optimized": false,
+      "active_capital_sol": 0.046388103300000004,
+      "total_wallet_sol": 0.051542337,
+      "timestamp": "2025-05-31T17:38:51.596395"
+    },
+    "strategy_info": {
+      "strategy_name": "opportunistic_volatility_breakout",
+      "allocation": 1.0,
+      "suitability": 1.0,
+      "base_size": 0.051542337,
+      "allocated_size": 0.051542337,
+      "final_size": 0.051542337
+    },
+    "regime_info": {
+      "regime": "ranging",
+      "multiplier": 1.0,
+      "confidence": 1.0
+    },
+    "enrichment_info": {
+      "base_confidence": 0.8,
+      "strategy_adjusted_confidence": 0.8,
+      "enhanced_confidence": 0.8,
+      "priority_score": 0.8
+    }
+  },
+  "result": {
+    "success": true,
+    "signature": "9aREbScP9cvE2sQktLvADs71TCLimzX693t9tpZ9QXQAWn4YJpuGeKoxYcUfGfDYBedqZsfu3UMYApL54RmbTt6",
+    "provider": "https://mainnet.helius-rpc.com/?api-key=dda9f776-9a40-447d-9ca4-22a27c21169e",
+    "verified": true,
+    "verification_method": "rpc_lookup"
+  },
+  "execution_time": 7.712984,
+  "wallet_address": "9wPBNeDnNbeP593cDJ12qUeQtGPEzJUyo5cm8hUB6tkc",
+  "mode": "live",
+  "balance_validation": {
+    "balance_before": 0.053542337,
+    "balance_after": 0.053542337,
+    "balance_changed": false,
+    "balance_change": 0.0
+  }
+}

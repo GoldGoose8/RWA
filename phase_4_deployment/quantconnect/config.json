@@ -1,0 +1,89 @@
+{
+  "algorithm": {
+    "name": "AlphaBotStrategy",
+    "description": "Q5 System Alpha Bot Strategy for QuantConnect",
+    "version": "1.0.0"
+  },
+  "brokerage": {
+    "name": "Coinbase",
+    "environment": "live",
+    "account_type": "Cash",
+    "api_key": "${COINBASE_API_KEY}",
+    "api_secret": "${COINBASE_API_SECRET}"
+  },
+  "symbols": [
+    {
+      "ticker": "SOLUSDT",
+      "security_type": "crypto",
+      "market": "coinbase",
+      "data_resolution": "minute",
+      "mint_address": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "ticker": "BTCUSDT",
+      "security_type": "crypto",
+      "market": "coinbase",
+      "data_resolution": "minute",
+      "mint_address": "9n4nbM75f5Ui33ZbPYXn59EwSgE8CGsHtAeTH5YFeJ9E"
+    },
+    {
+      "ticker": "ETHUSDT",
+      "security_type": "crypto",
+      "market": "coinbase",
+      "data_resolution": "minute",
+      "mint_address": "2FPyTwcZLUg1MDrwsyoP4D6s1tM7hAkHYRjkNb5w6Pxk"
+    },
+    {
+      "ticker": "BONKUSDT",
+      "security_type": "crypto",
+      "market": "coinbase",
+      "data_resolution": "minute",
+      "mint_address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
+    },
+    {
+      "ticker": "PUMPUSDT",
+      "security_type": "crypto",
+      "market": "coinbase",
+      "data_resolution": "minute",
+      "mint_address": "9Sa4tPz76w6huyRjQTxvP6EbpsB9GdafR9jPStMbpump"
+    }
+  ],
+  "parameters": {
+    "min_score": 0.41,
+    "min_alpha_count": 1.5,
+    "stop_loss_pct": 0.034,
+    "take_profit_pct": 0.092,
+    "trailing_stop_pct": 0.016,
+    "max_position_pct": 0.026,
+    "max_active_positions": 15
+  },
+  "data_sources": {
+    "alpha_wallets": {
+      "url": "https://api.q5system.com/alpha_wallets",
+      "api_key": "${Q5_API_KEY}",
+      "refresh_interval_minutes": 5
+    },
+    "token_signals": {
+      "url": "https://api.q5system.com/token_signals",
+      "api_key": "${Q5_API_KEY}",
+      "refresh_interval_minutes": 1
+    }
+  },
+  "risk_management": {
+    "max_drawdown_pct": 0.15,
+    "daily_loss_limit_pct": 0.05,
+    "position_sizing_method": "percentage",
+    "max_allocation_per_token_pct": 0.1
+  },
+  "notifications": {
+    "email": "alerts@q5system.com",
+    "slack_webhook": "${SLACK_WEBHOOK_URL}",
+    "telegram_bot_token": "${TELEGRAM_BOT_TOKEN}",
+    "telegram_chat_id": "${TELEGRAM_CHAT_ID}"
+  },
+  "logging": {
+    "level": "INFO",
+    "include_portfolio_state": true,
+    "include_order_events": true
+  }
+}

@@ -1,0 +1,4 @@
+
+# Native Wallet Configuration for RWA Trading System
+WALLET_ADDRESS=BwPWkJVhtFgbkgfLyU9hMPvnAprJajhV1qUBjYu1hwJE
+WALLET_PRIVATE_KEY=4rfUXoHGaFM9ce9YJDf3SzxW48ctSYnDbsfhfniiTbez3DzBmabRR22fh3JmzQmQ3P1GqW35heTj1v6kyn1wgyG2

@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "created": "2024-05-24",
+    "description": "Known whale wallets and exchange addresses for Solana",
+    "last_updated": "2024-05-24",
+    "version": "1.0"
+  },
+  
+  "exchanges": {
+    "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9": "Binance",
+    "2ojv9BAiHUrvsm9gxDe7fJSzbNZSJcxZvf8dqmWGHG8S": "FTX",
+    "GJRs4FwHtemZ5ZE9x3FNvJ8TMwitKTh21yxdRPqn7npE": "Coinbase",
+    "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2": "Kraken",
+    "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM": "Kucoin",
+    "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1": "Raydium",
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": "Orca",
+    "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB": "Jupiter",
+    "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX": "Serum",
+    "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin": "Mango"
+  },
+  
+  "whales": [
+    "GThUX1Atko4tqhN2NaiTazWSeFWMuiUiswQztfEHxHUD",
+    "J1S9H3QjnRtBbbuD4HjPV6RpRhwuk4zKbxsnCHuTgh9w",
+    "DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh",
+    "CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S",
+    "EhYXQP36vc7QhXQXXcHKLwYeVfL5RzKckELaGKXoaLfb",
+    "7cvkjYAkUYs4W8XcXsca7cBrEwP5Hhk6UJGFfgL5Zb8s",
+    "BrG44HdsEhzapvs8bEqzvkq4egwevS3fRE6ze2ENo6S8",
+    "5uvshrEkpZ9oEWztXS5Pci2T6dpHqFwRdBANt5XPDn5E",
+    "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC",
+    "3LABCVMenjixEwBNDrVkVA8v7YRMdATqPMnRdp4AjQXR"
+  ],
+  
+  "validators": [
+    "7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2",
+    "oRAnGeU5h8h2UkvbfnE5cjXnnAa4rBoaxmS4kbFymSe",
+    "J1S9H3QjnRtBbbuD4HjPV6RpRhwuk4zKbxsnCHuTgh9w",
+    "EARNynHRWg6GfyJCmrrizcZxARB3HVzcaasvNa8kBS72",
+    "StepeLdhJ2znRjHcZdjwMWsC4nTRURNKQY8Nca82LJp",
+    "mintrNtxN3PhAB45Pt41XqyKghTTpqcoBkQTZqjrP6t",
+    "MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD",
+    "voteRnv6PBzmiGP8NicWtQiqEJTwKKq2SxtqtdLUJjd",
+    "Va1idkzkB6LEmVFmxWbWU8Ao9qehC62Tjmf68L3uYKj",
+    "beefKGBWeSpHzYBHZXwp5So7wdQGX6mu4ZHCsH3uTar"
+  ],
+  
+  "institutions": [
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "11111111111111111111111111111111",
+    "SysvarRent111111111111111111111111111111111",
+    "SysvarC1ock11111111111111111111111111111111",
+    "Vote111111111111111111111111111111111111111"
+  ],
+  
+  "defi_protocols": {
+    "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1": "Raydium",
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": "Orca",
+    "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB": "Jupiter",
+    "srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX": "Serum",
+    "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin": "Mango",
+    "So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo": "Solend",
+    "LendZqTs7gn5CTSJU1jWKhKuVpjJGom45nnwPb2AMTi": "Port Finance",
+    "MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD": "Marinade",
+    "StepeLdhJ2znRjHcZdjwMWsC4nTRURNKQY8Nca82LJp": "Step Finance",
+    "mintrNtxN3PhAB45Pt41XqyKghTTpqcoBkQTZqjrP6t": "Mercurial"
+  },
+  
+  "whale_categories": {
+    "large_holders": {
+      "description": "Wallets holding >50,000 SOL",
+      "addresses": [
+        "GThUX1Atko4tqhN2NaiTazWSeFWMuiUiswQztfEHxHUD",
+        "J1S9H3QjnRtBbbuD4HjPV6RpRhwuk4zKbxsnCHuTgh9w",
+        "DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh"
+      ]
+    },
+    "medium_holders": {
+      "description": "Wallets holding 10,000-50,000 SOL",
+      "addresses": [
+        "CakcnaRDHka2gXyfbEd2d3xsvkJkqsLw2akB3zsN1D2S",
+        "EhYXQP36vc7QhXQXXcHKLwYeVfL5RzKckELaGKXoaLfb",
+        "7cvkjYAkUYs4W8XcXsca7cBrEwP5Hhk6UJGFfgL5Zb8s"
+      ]
+    },
+    "active_traders": {
+      "description": "High-frequency whale traders",
+      "addresses": [
+        "BrG44HdsEhzapvs8bEqzvkq4egwevS3fRE6ze2ENo6S8",
+        "5uvshrEkpZ9oEWztXS5Pci2T6dpHqFwRdBANt5XPDn5E",
+        "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC"
+      ]
+    }
+  },
+  
+  "monitoring_settings": {
+    "high_priority_wallets": [
+      "GThUX1Atko4tqhN2NaiTazWSeFWMuiUiswQztfEHxHUD",
+      "J1S9H3QjnRtBbbuD4HjPV6RpRhwuk4zKbxsnCHuTgh9w",
+      "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9"
+    ],
+    "alert_thresholds": {
+      "large_transaction_sol": 1000,
+      "medium_transaction_sol": 500,
+      "small_transaction_sol": 100
+    },
+    "tracking_intervals": {
+      "high_priority_seconds": 30,
+      "medium_priority_seconds": 60,
+      "low_priority_seconds": 300
+    }
+  }
+}

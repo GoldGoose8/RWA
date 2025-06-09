@@ -1,0 +1,90 @@
+# Orca DEX Configuration
+# Configuration for Orca swap pools and tokens
+
+# Supported tokens with their mint addresses
+tokens:
+  SOL:
+    mint: "So11111111111111111111111111111111111111112"
+    decimals: 9
+    symbol: "SOL"
+    name: "Solana"
+
+  USDC:
+    mint: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+    decimals: 6
+    symbol: "USDC"
+    name: "USD Coin"
+
+  USDT:
+    mint: "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+    decimals: 6
+    symbol: "USDT"
+    name: "Tether USD"
+
+  BONK:
+    mint: "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
+    decimals: 5
+    symbol: "BONK"
+    name: "Bonk"
+
+  JUP:
+    mint: "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+    decimals: 6
+    symbol: "JUP"
+    name: "Jupiter"
+
+# Orca pool configurations
+pools:
+  SOL-USDC:
+    pool_address: "EGZ7tiLeH62TPV1gL8WwbXGzEPa9zmcpVnnkPKKnrE2U"
+    token_a: "So11111111111111111111111111111111111111112"  # SOL
+    token_b: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"  # USDC
+    fee_rate: 0.003
+    liquidity_threshold: 100000  # Minimum liquidity in USD
+
+  SOL-USDT:
+    pool_address: "7XawhbbxtsRcQA8KTkHT9f9nc6d69UwqCDh6U5EEbEmX"
+    token_a: "So11111111111111111111111111111111111111112"  # SOL
+    token_b: "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"  # USDT
+    fee_rate: 0.003
+    liquidity_threshold: 50000
+
+  USDC-USDT:
+    pool_address: "4fuUiYxTQ6QCrdSq9ouBYcTM7bqSwYTSyLueGZLTy4T4"
+    token_a: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"  # USDC
+    token_b: "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"  # USDT
+    fee_rate: 0.001
+    liquidity_threshold: 100000
+
+# Orca program configuration
+program:
+  program_id: "9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP"  # Orca Whirlpool Program ID
+  whirlpool_program_id: "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc"
+  token_program_id: "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+  system_program_id: "11111111111111111111111111111111"
+
+# Orca API configuration
+api:
+  base_url: "https://api.orca.so"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+
+# Slippage and trading parameters
+trading:
+  default_slippage_bps: 50  # 0.5%
+  max_slippage_bps: 300     # 3.0%
+  min_trade_amount: 0.001   # Minimum trade amount in SOL
+  max_trade_amount: 10.0    # Maximum trade amount in SOL
+
+# Pool discovery settings
+discovery:
+  auto_discover: true
+  cache_duration: 300  # 5 minutes
+  min_liquidity: 10000 # Minimum pool liquidity in USD
+
+# Fallback configuration - DISABLED FOR ORCA-ONLY TRADING
+fallback:
+  enabled: false  # ORCA ONLY: No Jupiter fallback
+  use_jupiter: false  # ORCA ONLY: Force Orca DEX usage
+  jupiter_api_url: "https://quote-api.jup.ag/v6"

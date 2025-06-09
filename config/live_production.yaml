@@ -1,0 +1,189 @@
+dashboard:
+  enabled: true
+  key_metrics:
+  - active_capital_pnl
+  - daily_return_pct
+  - current_exposure_pct
+  - trades_today
+  - win_rate
+  - sharpe_ratio
+  pnl_calculation_base: active_capital
+  position_display_base: active_capital
+  show_active_capital: true
+  show_reserve_balance: true
+  show_total_wallet: true
+  update_interval: 10
+data:
+  backup_enabled: true
+  backup_interval: 3600
+  market_data_storage: true
+  performance_history_enabled: true
+  trade_history_enabled: true
+emergency:
+  circuit_breaker_enabled: true
+  emergency_email_enabled: false
+  emergency_stop_enabled: true
+  emergency_telegram_enabled: true
+  manual_override_enabled: true
+  max_daily_loss_circuit: 0.1
+execution:
+  execution_timeout: 45
+  max_order_retries: 5
+  max_spread_pct: 0.05
+  min_liquidity_usd: 5000
+  order_type: market
+  retry_failed_orders: true
+  slippage_tolerance: 0.02  # 🚨 CRITICAL FIX: 2.0% slippage tolerance to prevent ProgramFailedToComplete errors
+logging:
+  alert_logging: true
+  backup_count: 5
+  error_logging: true
+  file_enabled: true
+  file_path: logs/live_production.log
+  level: INFO
+  max_file_size_mb: 100
+  performance_logging: true
+  trade_logging: true
+market_data:
+  fallback_source: helius
+  price_staleness_threshold: 30
+  primary_source: birdeye
+  update_interval: 5
+mode:
+  backtesting: false
+  live_trading: true
+  paper_trading: false
+  simulation: false
+monitoring:
+  daily_summary_enabled: true
+  email_alerts: false
+  enabled: true
+  exposure_alert_threshold: 0.4
+  loss_alert_threshold: 0.02
+  performance_report_interval: 3600
+  profit_alert_threshold: 0.01
+  telegram_alerts: true
+  update_interval: 60
+  weekly_summary_enabled: true
+risk_management:
+  default_stop_loss: 0.02
+  enabled: true
+  max_daily_exposure: 0.3
+  max_daily_loss: 0.05
+  max_portfolio_exposure: 0.5
+  max_portfolio_var: 0.03
+  max_risk_per_trade: 0.02
+  max_single_position: 0.1
+  max_weekly_loss: 0.1
+  trailing_stop_distance: 0.015
+  trailing_stop_enabled: true
+  var_confidence_level: 0.95
+  var_lookback_days: 30
+  # Position flattening configuration
+  position_flattening:
+    enabled: true
+    session_end_flattening: true
+    risk_threshold_usd: 50.0
+    emergency_flattening: true
+    min_position_size_sol: 0.001
+    force_flatten_on_error: true
+
+# Adaptive Learning Configuration
+adaptive_learning:
+  enabled: true
+  learning_rate: 0.01
+  memory_size: 1000
+  adaptation_threshold: 0.1
+  min_samples: 50
+  adaptation_frequency_hours: 1
+  strategy_adaptation:
+    weight_adjustment: true
+    confidence_threshold_adjustment: true
+    position_size_adjustment: true
+  performance_tracking:
+    window_size: 100
+    min_trades_for_adaptation: 10
+
+# Whale Detection Integration
+whale_detection:
+  enabled: true
+  min_whale_amount_sol: 100.0
+  min_whale_amount_usd: 18000.0
+  monitoring_interval: 10
+  confidence_threshold: 0.6
+  rl_learning_enabled: true
+
+  # Whale signal integration
+  signal_integration:
+    enabled: true
+    whale_confirmation_bonus: 0.2
+    whale_contradiction_penalty: 0.15
+    whale_signal_weight: 0.3
+
+  # Smart money copying
+  smart_money_copying:
+    enabled: true
+    copy_threshold_sol: 200
+    copy_confidence_threshold: 0.7
+    max_copy_percentage: 0.3
+solana:
+  commitment: confirmed
+  fallback_rpc_url: ${FALLBACK_RPC_URL}
+  max_retries: 3
+  private_rpc_url: ${HELIUS_RPC_URL}
+  provider: helius
+  retry_delay: 1.0
+  rpc_url: ${HELIUS_RPC_URL}
+  tx_timeout: 30
+strategies:
+  breakout:
+    enabled: true
+    min_confidence: 0.8
+    position_size_multiplier: 0.8
+    weight: 0.2
+  mean_reversion:
+    enabled: true
+    min_confidence: 0.95   # 🚨 CRITICAL FIX: 95% confidence for profitable trades only
+    position_size_multiplier: 1.0  # 🚨 CRITICAL FIX: Normal sizing, let base config handle size
+    weight: 0.7            # 🚨 CRITICAL FIX: Reduce weight, increase selectivity
+    # 🎯 WINNING: 0.7826 score parameters + profit targets
+    lookback_period: 25
+    std_dev_multiplier: 2.0
+    mean_period: 30
+    use_adaptive_params: false
+    position_sizing_method: "risk_based"
+    risk_per_trade: 0.01   # 🚨 CRITICAL FIX: 1% risk per trade
+    profit_target: 0.015   # 🚨 CRITICAL FIX: 1.5% minimum profit target
+    min_trade_interval: 600 # 🚨 CRITICAL FIX: 10 minutes between trades
+  momentum:
+    enabled: true
+    min_confidence: 0.8    # 🎯 OPTIMIZED: Increased for profitability
+    position_size_multiplier: 1.0
+    weight: 0.3
+targets:
+  daily_return_target: 0.005
+  max_drawdown_tolerance: 0.1
+  min_sharpe_ratio: 1.0
+  min_win_rate: 0.6
+  monthly_return_target: 0.1
+  weekly_return_target: 0.025
+trading:
+  base_position_size_pct: 0.50  # 🚨 CRITICAL FIX: 50% base position to overcome fees
+  enabled: true
+  max_position_size_pct: 0.80   # 🚨 CRITICAL FIX: 80% max for meaningful trades
+  max_trades_per_day: 20        # 🚨 CRITICAL FIX: Reduce frequency, increase quality
+  min_position_size_pct: 0.20   # 🚨 CRITICAL FIX: 20% minimum for fee-viable trades
+  min_trade_interval: 300       # 🚨 CRITICAL FIX: 5 minutes between trades for quality
+  min_trade_size_usd: 10        # 🚀 REDUCED: $10 minimum since strategy works (was $50)
+  target_trade_size_usd: 50     # 🚀 REDUCED: $50 target for more frequent trades (was $200)
+  update_interval: 60           # 🚨 CRITICAL FIX: Slower updates for quality
+wallet:
+  active_trading_pct: 0.9  # 🚀 FIXED: Use 90% of wallet instead of 50%
+  address: ${WALLET_ADDRESS}
+  keypair_path: ${KEYPAIR_PATH}
+  max_positions: 10
+  min_balance_warning: 1.0
+  min_trading_balance: 0.5
+  position_update_interval: 300
+  reserve_pct: 0.1  # 🚀 FIXED: Only keep 10% in reserve instead of 50%
+  state_sync_interval: 60
